@@ -11,7 +11,6 @@
     const db = firebase.firestore()
     const userRef = db.collection('users').doc('xxx')
     const userDoc = await userRef.get()
-    console.log(2)
 
     if (userDoc.exists) {
       console.log(userDoc.id)
