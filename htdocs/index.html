@@ -5,8 +5,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Firestore Hello World</title>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-firestore.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      var firebaseConfig = {
+        apiKey: 'AIzaSyCbTmUZgrAm9V0bNoFovbRDFpWpR464Gpg',
+        authDomain: 'highgrenade-9d470.firebaseapp.com',
+        projectId: 'highgrenade-9d470',
+        storageBucket: 'highgrenade-9d470.appspot.com',
+        messagingSenderId: '503309483320',
+        appId: '1:503309483320:web:064e7a3497bf52cbf055cd',
+        measurementId: 'G-7HP2HLRFW7',
+      }
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig)
+    </script>
   </head>
   <body>
-    test
+    <h1>firestore test</h1>
+    <div>
+      <input type="text" id="text" />
+      <button id="btnRegist">登録</button>
+    </div>
+    <div>
+      <button id="btnSearch">検索</button>
+    </div>
+    <script src="app.js"></script>
   </body>
 </html>
