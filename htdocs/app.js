@@ -26,12 +26,15 @@ const search = () => {
   console.log('search')
   if (searchFlg) return
   searchFlg = true
+
+  searchList.textContent = null
+
   db.collection('users')
     .get()
     .then((query) => {
       query.forEach((doc) => {
         const li = document.createElement('li')
-        li.textContent = doc.id + JSON.stringify(doc.data())
+        li.textContent = doc.id + ' : ' + JSON.stringify(doc.data())
         searchList.appendChild(li)
         searchFlg = false
       })
@@ -40,6 +43,9 @@ const search = () => {
 
 const regist = () => {
   console.log('regist')
+  if (text.value === '') return
+  db.collection('users').add({ name: text.value })
+  text.value = ''
 }
 
 init()
