@@ -1,4 +1,4 @@
-let db, text, btnRegist, btnSearch, searchFlg
+let db, text, btnRegist, btnSearch, searchFlg, searchList
 
 const init = () => {
   setDB()
@@ -14,6 +14,7 @@ const getDom = () => {
   text = document.getElementById('text')
   btnRegist = document.getElementById('btnRegist')
   btnSearch = document.getElementById('btnSearch')
+  searchList = document.getElementById('searchList')
 }
 
 const setEvent = () => {
@@ -29,8 +30,10 @@ const search = () => {
     .get()
     .then((query) => {
       query.forEach((doc) => {
-        console.log(`${doc.id}:`)
-        console.log(doc.data())
+        const li = document.createElement('li')
+        li.textContent = doc.id + JSON.stringify(doc.data())
+        searchList.appendChild(li)
+        searchFlg = false
       })
     })
 }
